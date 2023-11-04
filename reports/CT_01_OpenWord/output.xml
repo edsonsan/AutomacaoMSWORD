@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230919 15:43:42.000" rpa="false" schemaversion="4">
+<suite id="s1" name="CT 01 OpenWord" source="D:\dev\aulas\udemy\RobotExpert22\CT_01_OpenWord.robot">
+<test id="s1-t1" name="TC_001 Iniciando Word no Windows" line="14">
+<kw name="Adicionar caminho" type="SETUP">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagens}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20230919 15:43:44.773" endtime="20230919 15:43:44.786"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:44.772" endtime="20230919 15:43:44.786"/>
+</kw>
+<kw name="Dado que o &quot;word&quot; esteja instalado" sourcename="Dado que o ${prog} esteja instalado">
+<kw name="Click" library="SikuliLibrary">
+<arg>iniciar.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:43:45.740" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149025086.png'/&gt;
+[log] CLICK on L[24,744]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20230919 15:43:44.787" endtime="20230919 15:43:45.740"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>brpesquisaw11.png</arg>
+<arg>word</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20230919 15:43:47.234" level="INFO">Input Text:
+word</msg>
+<msg timestamp="20230919 15:43:47.234" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149026200.png'/&gt;
+[log] CLICK on L[415,88]@S(0) (544 msec)
+[log]  TYPE "word"</msg>
+<status status="PASS" starttime="20230919 15:43:45.740" endtime="20230919 15:43:47.234"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230919 15:43:49.236" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230919 15:43:47.235" endtime="20230919 15:43:49.236"/>
+</kw>
+<kw name="Get Match Score" library="SikuliLibrary">
+<var>${score}</var>
+<arg>msword.png</arg>
+<doc>Get match scoreTries to find the image on the screen, returns accuracy score (0-1)</doc>
+<msg timestamp="20230919 15:43:49.361" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149029354.png'/&gt;</msg>
+<msg timestamp="20230919 15:43:49.361" level="INFO">${score} = 1.0</msg>
+<status status="PASS" starttime="20230919 15:43:49.236" endtime="20230919 15:43:49.361"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${score} &gt;= 0.95</arg>
+<arg>Verdadeiro</arg>
+<arg>ELSE</arg>
+<arg>Falso</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verdadeiro">
+<kw name="Log" library="BuiltIn">
+<arg>${progExist}="True"</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230919 15:43:49.362" level="INFO">get current date utc="True"</msg>
+<status status="PASS" starttime="20230919 15:43:49.362" endtime="20230919 15:43:49.362"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:49.362" endtime="20230919 15:43:49.362"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:49.362" endtime="20230919 15:43:49.362"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:44.787" endtime="20230919 15:43:49.362"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:44.772" endtime="20230919 15:43:49.363"/>
+</test>
+<test id="s1-t2" name="TC_002 Abrindo MSWord" line="16">
+<kw name="Adicionar caminho" type="SETUP">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagens}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20230919 15:43:49.364" endtime="20230919 15:43:49.368"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:49.364" endtime="20230919 15:43:49.368"/>
+</kw>
+<kw name="Quando eu clico no ícone MS Word o sistema abrirá">
+<kw name="Click" library="SikuliLibrary">
+<arg>msword.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:43:50.189" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149029495.png'/&gt;
+[log] CLICK on L[206,240]@S(0) (554 msec)</msg>
+<status status="PASS" starttime="20230919 15:43:49.368" endtime="20230919 15:43:50.189"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>wordnovo.png</arg>
+<arg>10</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20230919 15:43:51.709" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149031702.png'/&gt;</msg>
+<status status="PASS" starttime="20230919 15:43:50.189" endtime="20230919 15:43:51.709"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>wordnovo.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:43:52.567" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149031875.png'/&gt;
+[log] CLICK on L[271,218]@S(0) (544 msec)</msg>
+<status status="PASS" starttime="20230919 15:43:51.709" endtime="20230919 15:43:52.567"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:49.368" endtime="20230919 15:43:52.568"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:49.364" endtime="20230919 15:43:52.568"/>
+</test>
+<test id="s1-t3" name="TC_003 Escrevendo Texto" line="18">
+<kw name="Adicionar caminho" type="SETUP">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagens}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20230919 15:43:52.569" endtime="20230919 15:43:52.574"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:52.569" endtime="20230919 15:43:52.574"/>
+</kw>
+<kw name="Então posso efetuar a edição do texto">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230919 15:43:54.574" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230919 15:43:52.574" endtime="20230919 15:43:54.574"/>
+</kw>
+<kw name="Paste Text" library="SikuliLibrary">
+<arg>areadetexto.png</arg>
+<arg>Texto automatizado 01: criado pelo Robot FrameWork utilizando a Biblioteca Sikuli</arg>
+<doc>Paste text. Image could be empty</doc>
+<msg timestamp="20230919 15:43:55.493" level="INFO">Paste Text:
+Texto automatizado 01: criado pelo Robot FrameWork utilizando a Biblioteca Sikuli</msg>
+<msg timestamp="20230919 15:43:55.493" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149034737.png'/&gt;
+[log] CLICK on L[513,316]@S(0) (537 msec)</msg>
+<status status="PASS" starttime="20230919 15:43:54.574" endtime="20230919 15:43:55.493"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>END</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:43:55.569" level="INFO">[log]  TYPE "#END."</msg>
+<status status="PASS" starttime="20230919 15:43:55.493" endtime="20230919 15:43:55.569"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:43:55.634" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20230919 15:43:55.569" endtime="20230919 15:43:55.634"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>novalinha.png</arg>
+<arg>Texto automatizado 02: criado pelo Robot FrameWork utilizando a Biblioteca Sikuli Linha 2</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20230919 15:44:02.179" level="INFO">Input Text:
+Texto automatizado 02: criado pelo Robot FrameWork utilizando a Biblioteca Sikuli Linha 2</msg>
+<msg timestamp="20230919 15:44:02.179" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149035755.png'/&gt;
+[log] CLICK on L[240,362]@S(0) (532 msec)
+[log]  TYPE "Texto automatizado 02: criado pelo Robot FrameWork utilizando a Biblioteca Sikuli Linha 2"</msg>
+<status status="PASS" starttime="20230919 15:43:55.635" endtime="20230919 15:44:02.179"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:44:02.241" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20230919 15:44:02.179" endtime="20230919 15:44:02.241"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>novalinha.png</arg>
+<arg>Texto automatizado 03: Gostei muito do aprendizado utilizando a Biblioteca Sikuli Linha 3</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20230919 15:44:08.720" level="INFO">Input Text:
+Texto automatizado 03: Gostei muito do aprendizado utilizando a Biblioteca Sikuli Linha 3</msg>
+<msg timestamp="20230919 15:44:08.720" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149042348.png'/&gt;
+[log] CLICK on L[240,399]@S(0) (538 msec)
+[log]  TYPE "Texto automatizado 03: Gostei muito do aprendizado utilizando a Biblioteca Sikuli Linha 3"</msg>
+<status status="PASS" starttime="20230919 15:44:02.241" endtime="20230919 15:44:08.721"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:44:08.798" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20230919 15:44:08.721" endtime="20230919 15:44:08.798"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:44:08.874" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20230919 15:44:08.798" endtime="20230919 15:44:08.875"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>novalinha.png</arg>
+<arg>"Texto automatizado 04: Finalizando a automaçao fechando o MSWord sem salvar."</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20230919 15:44:14.804" level="INFO">Input Text:
+"Texto automatizado 04: Finalizando a automaçao fechando o MSWord sem salvar."</msg>
+<msg timestamp="20230919 15:44:14.804" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149048998.png'/&gt;
+[log] CLICK on L[240,453]@S(0) (533 msec)
+[log]  TYPE ""Texto automatizado 04: Finalizando a automaçao fechando o MSWord sem salvar.""</msg>
+<status status="PASS" starttime="20230919 15:44:08.875" endtime="20230919 15:44:14.804"/>
+</kw>
+<kw name="Press Special Key" library="SikuliLibrary">
+<arg>ENTER</arg>
+<doc>Press special key
+ Presses a special keyboard key.</doc>
+<msg timestamp="20230919 15:44:14.866" level="INFO">[log]  TYPE "#ENTER."</msg>
+<status status="PASS" starttime="20230919 15:44:14.805" endtime="20230919 15:44:14.867"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230919 15:44:18.867" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230919 15:44:14.867" endtime="20230919 15:44:18.867"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:52.574" endtime="20230919 15:44:18.867"/>
+</kw>
+<status status="PASS" starttime="20230919 15:43:52.569" endtime="20230919 15:44:18.867"/>
+</test>
+<test id="s1-t4" name="TC-004 Corrigindo Texto" line="20">
+<kw name="Adicionar caminho" type="SETUP">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagens}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20230919 15:44:18.869" endtime="20230919 15:44:18.874"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:18.869" endtime="20230919 15:44:18.874"/>
+</kw>
+<kw name="Emtão posso corrifir o texto">
+<kw name="Get Match Score" library="SikuliLibrary">
+<var>${score}</var>
+<arg>automacaocorregir.png</arg>
+<doc>Get match scoreTries to find the image on the screen, returns accuracy score (0-1)</doc>
+<msg timestamp="20230919 15:44:18.994" level="INFO">Could not find P(automacaocorregir.png) S: 0.699999988079071</msg>
+<msg timestamp="20230919 15:44:18.994" level="INFO">${score} = 0.0</msg>
+<status status="PASS" starttime="20230919 15:44:18.874" endtime="20230919 15:44:18.995"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${score} &gt;= 0.95</arg>
+<arg>Corrigir</arg>
+<arg>ELSE</arg>
+<arg>Ignorar</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Ignorar">
+<kw name="Right Click" library="SikuliLibrary">
+<arg>framework.png</arg>
+<doc>Right click</doc>
+<msg timestamp="20230919 15:44:19.765" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149059121.png'/&gt;
+[log] RIGHT CLICK on L[573,324]@S(0) (543 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:18.995" endtime="20230919 15:44:19.765"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>ignorartudo.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:21.178" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149060554.png'/&gt;
+[log] CLICK on L[692,471]@S(0) (533 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:19.765" endtime="20230919 15:44:21.178"/>
+</kw>
+<kw name="Right Click" library="SikuliLibrary">
+<arg>robot.png</arg>
+<doc>Right click</doc>
+<msg timestamp="20230919 15:44:21.947" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149061317.png'/&gt;
+[log] RIGHT CLICK on L[507,322]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:21.179" endtime="20230919 15:44:21.947"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>ignorartudo.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:23.068" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149062418.png'/&gt;
+[log] CLICK on L[604,516]@S(0) (536 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:21.948" endtime="20230919 15:44:23.068"/>
+</kw>
+<kw name="Right Click" library="SikuliLibrary">
+<arg>sikuli.png</arg>
+<doc>Right click</doc>
+<msg timestamp="20230919 15:44:23.810" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149063189.png'/&gt;
+[log] RIGHT CLICK on L[253,342]@S(0) (535 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:23.068" endtime="20230919 15:44:23.810"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>ignorartudo.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:24.938" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149064306.png'/&gt;
+[log] CLICK on L[347,535]@S(0) (542 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:23.811" endtime="20230919 15:44:24.939"/>
+</kw>
+<kw name="Right Click" library="SikuliLibrary">
+<arg>palavra_msword.png</arg>
+<doc>Right click</doc>
+<msg timestamp="20230919 15:44:25.718" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149065076.png'/&gt;
+[log] RIGHT CLICK on L[705,453]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:24.939" endtime="20230919 15:44:25.718"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>ignorartudo.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:26.802" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149066170.png'/&gt;
+[log] CLICK on L[813,327]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:25.718" endtime="20230919 15:44:26.802"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:18.995" endtime="20230919 15:44:26.803"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:18.995" endtime="20230919 15:44:26.803"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230919 15:44:30.803" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230919 15:44:26.803" endtime="20230919 15:44:30.803"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:18.874" endtime="20230919 15:44:30.803"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:18.868" endtime="20230919 15:44:30.803"/>
+</test>
+<test id="s1-t5" name="TC-005 Encerrando a aplicação" line="22">
+<kw name="Adicionar caminho" type="SETUP">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagens}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20230919 15:44:30.805" endtime="20230919 15:44:30.808"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:30.805" endtime="20230919 15:44:30.809"/>
+</kw>
+<kw name="Finalizando o MS Word">
+<kw name="Click" library="SikuliLibrary">
+<arg>fecharaplicacao.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:31.554" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149070926.png'/&gt;
+[log] CLICK on L[999,25]@S(0) (549 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:30.809" endtime="20230919 15:44:31.554"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>btnnaosalvar.png</arg>
+<doc>Click</doc>
+<msg timestamp="20230919 15:44:32.754" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1695149072110.png'/&gt;
+[log] CLICK on L[579,558]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20230919 15:44:31.554" endtime="20230919 15:44:32.754"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:30.809" endtime="20230919 15:44:32.754"/>
+</kw>
+<status status="PASS" starttime="20230919 15:44:30.804" endtime="20230919 15:44:32.755"/>
+</test>
+<doc>Suite de teste do Programa Word utilizando o RobotFramework</doc>
+<status status="PASS" starttime="20230919 15:43:42.001" endtime="20230919 15:44:32.756"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="CT 01 OpenWord">CT 01 OpenWord</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
